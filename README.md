@@ -1,3 +1,1 @@
-# libft
 
-INITIAL PUSH :::;
