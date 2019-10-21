@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikhadem <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 20:30:23 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/10/18 15:35:37 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/10/21 18:17:01 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,20 @@ char	*ft_strnstr(const char *h, const char *n, size_t len)
 
 	if (ft_strncmp(n, "", 1) == 0)
 		return ((char *)h);
-	temp = (char *)malloc((len + 1) * sizeof(*h));
+	if (!(temp = (char *)malloc((len + 1) * sizeof(*h))))
+		return (NULL);
 	pos = 0;
 	ft_strlcpy(temp, h, len + 1);
 	while (temp[pos] != '\0')
 	{
 		if (temp[pos] == *n)
 			if (ft_strncmp(temp + pos, n, ft_strlen(n)) == 0)
-				return ((char *)(h + pos));
+				{
+					free (temp);
+					return ((char *)(h + pos));
+				}
 		pos++;
 	}
+	free(temp);
 	return (NULL);
 }
