@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+*	formating  a comment for the norm
+*/
+
 char	*ft_substr(const char *str, unsigned int start, size_t len)
 {
 	char	*res;
@@ -19,6 +23,8 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	if (!str)
 		return (NULL);
 	if (!(res = (char *)malloc(sizeof(*str) * (len + 1))))
+		return (NULL);
+	if (start > ft_strlen(str))
 		return (NULL);
 	ft_strncpy(res, str + start, len);
 	res[len] = '\0';
