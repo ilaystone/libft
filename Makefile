@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 15:21:13 by ikhadem           #+#    #+#              #
-#    Updated: 2019/10/22 08:34:59 by ikhadem          ###   ########.fr        #
+#    Updated: 2019/10/23 07:07:25 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,18 +29,20 @@ OBJ = $(SRC:.c=.o)
 B_OBJ = $(B_SRC:.c=.o)
 
 FLAG = -Wextra -Werror -Wall
-INCLUDE = ./
+INCLUDE = ./libft.h
 
 NAME = libft.a
 
 all:$(NAME)
 
-$(NAME) : $(OBJ) ./libft.h 
-		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+$(NAME) : $(OBJ) 
+		ar rcs $(NAME) $(OBJ)
+
+bonus : $(B_OBJ)
+		ar rcs $(NAME) $(B_OBJ)
 
 %.o : %.c
-		gcc $(FLAG) -c $< -o $@
+		gcc $(FLAG) -I $(INCLUDE) -c $< -o $@
 
 clean :
 	rm -f $(OBJ) $(B_OBJ)
@@ -50,9 +52,4 @@ fclean : clean
 
 re : fclean all 
 
-bonus : $(OBJ) $(B_OBJ) ./libft.h ./libft_bonus.h
-		ar rc $(NAME) $(OBJ) $(B_OBJ)
-		ranlib $(NAME)
-
-%.o : %.c
-		gcc $(FLAG) -c $< -o $@
+rebonus : fclean bonus

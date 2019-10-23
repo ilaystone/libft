@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:14:21 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/10/22 08:41:41 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/10/23 06:43:03 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	if (!(res = (char *)malloc(sizeof(*str) * (len + 1))))
 		return (NULL);
 	if (start > ft_strlen(str))
-		return (NULL);
+		return ("");
 	ft_strncpy(res, str + start, len);
 	res[len] = '\0';
 	return (res);
