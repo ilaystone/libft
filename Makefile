@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 15:21:13 by ikhadem           #+#    #+#              #
-#    Updated: 2019/11/03 16:34:51 by ikhadem          ###   ########.fr        #
+#    Updated: 2019/11/04 13:23:14 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC := ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c\
 	ft_strlcpy.c ft_toupper.c ft_isascii.c ft_putendl.c ft_isblank.c\
 	ft_putendl_fd.c ft_strmapi.c ft_isdigit.c ft_putnbr.c ft_strncmp.c\
 	ft_islower.c ft_putnbr_fd.c ft_strncpy.c ft_isprint.c ft_putstr.c\
-	ft_strnstr.c ft_isspace.c ft_putstr_fd.c ft_strrchr.c ft_puthex.c
+	ft_strnstr.c ft_isspace.c ft_putstr_fd.c ft_strrchr.c ft_puthex.c\
+	ft_putptr.c
 
 B_SRC := ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c\
 		ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c\
@@ -34,15 +35,13 @@ INCLUDE = ./
 
 NAME = libft.a
 
-all:$(NAME)
+all : $(NAME)
 
-$(NAME) : $(OBJ) 
-		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+$(NAME) : $(OBJ) $(B_OBJ)
+		ar rcs $(NAME) $(OBJ) $(B_OBJ)
 
-bonus : all $(B_OBJ)
+bonus : $(B_OBJ)
 		ar rcs $(NAME) $(B_OBJ)
-		ranlib $(NAME)
 
 %.o : %.c
 		$(CC) $(FLAG) -I $(INCLUDE) -c $< -o $@
@@ -53,6 +52,6 @@ clean :
 fclean : clean
 		rm -f $(NAME)
 
-re : fclean all 
+re : fclean all
 
 rebonus : fclean bonus

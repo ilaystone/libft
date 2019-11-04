@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:01:36 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/03 16:35:07 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/04 13:12:38 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 
 # define SL_SIZE(A, B) (A < B ? A : B)
+# define U_HEXA 0
+# define L_HEXA 1
 
 typedef struct		s_list
 {
@@ -70,7 +72,8 @@ void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putendl(char *str);
 void				ft_putnbr(int n);
-void				ft_puthex(int n);
+void				ft_puthex(long int n, int type);
+void				ft_putptr(long int p);
 
 /*
 **		BONUS
