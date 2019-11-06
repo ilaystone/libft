@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:01:36 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/04 13:12:38 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 06:52:26 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void				ft_putstr(char *str);
 void				ft_putendl(char *str);
 void				ft_putnbr(int n);
 void				ft_puthex(long int n, int type);
-void				ft_putptr(long int p);
+void				ft_putptr(void *p);
 
 /*
 **		BONUS

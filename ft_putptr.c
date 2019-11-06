@@ -6,14 +6,14 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:01:11 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/04 13:11:22 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 07:11:05 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putptr(long int p)
+void	ft_putptr(void *p)
 {
-    ft_putstr("0x");
-    ft_puthex(p, L_HEXA);
+	ft_putstr("0x");
+	ft_puthex((long int)p, L_HEXA);
 }
