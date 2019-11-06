@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_upperstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 13:04:15 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/06 15:58:11 by ikhadem          ###   ########.fr       */
+/*   Created: 2019/11/06 16:53:40 by ikhadem           #+#    #+#             */
+/*   Updated: 2019/11/06 16:56:00 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int c)
+char	*ft_upperstr(char *str)
 {
-	return (ft_itoa_base(c, 10));
+	char	*res;
+	int		i;
+
+	i = 0;
+	res = (char *)malloc(ft_strlen(str));
+	while (str[i])
+	{
+		res[i] = ft_toupper(str[i]);
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }

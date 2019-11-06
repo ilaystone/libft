@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:01:36 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/06 06:52:26 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 16:57:27 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 
 # define SL_SIZE(A, B) (A < B ? A : B)
+# define ABS(A) (A < 0 ? -A : A)
 # define U_HEXA 0
 # define L_HEXA 1
 
@@ -74,6 +75,9 @@ void				ft_putendl(char *str);
 void				ft_putnbr(int n);
 void				ft_puthex(long int n, int type);
 void				ft_putptr(void *p);
+char				*ft_itoa_base(int c, int base);
+char				*ft_upperstr(char *str);
+char				*ft_lowerstr(char *str);
 
 /*
 **		BONUS
