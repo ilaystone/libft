@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 15:21:13 by ikhadem           #+#    #+#              #
-#    Updated: 2019/11/06 16:57:45 by ikhadem          ###   ########.fr        #
+#    Updated: 2019/11/08 15:51:34 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC := ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c\
 	ft_putendl_fd.c ft_strmapi.c ft_isdigit.c ft_putnbr.c ft_strncmp.c\
 	ft_islower.c ft_putnbr_fd.c ft_strncpy.c ft_isprint.c ft_putstr.c\
 	ft_strnstr.c ft_isspace.c ft_putstr_fd.c ft_strrchr.c ft_puthex.c\
-	ft_putptr.c ft_itoa_base.c ft_upperstr.c ft_lowerstr.c
+	ft_putptr.c ft_itoa_base.c ft_upperstr.c ft_lowerstr.c ft_newstr.c
 
 B_SRC := ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c\
 		ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c\
@@ -38,19 +38,19 @@ NAME = libft.a
 all : $(NAME)
 
 $(NAME) : $(OBJ) $(B_OBJ)
-		ar rcs $(NAME) $(OBJ) $(B_OBJ)
+		@ar rcs $(NAME) $(OBJ) $(B_OBJ)
 
 bonus : $(B_OBJ)
-		ar rcs $(NAME) $(B_OBJ)
+		@ar rcs $(NAME) $(B_OBJ)
 
 %.o : %.c
-		$(CC) $(FLAG) -I $(INCLUDE) -c $< -o $@
+		@$(CC) $(FLAG) -I $(INCLUDE) -c $< -o $@
 
 clean :
-	rm -f $(OBJ) $(B_OBJ)
+		@rm -f $(OBJ) $(B_OBJ)
 
 fclean : clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re : fclean all
 

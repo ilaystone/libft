@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_newstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 09:30:55 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/08 13:32:51 by ikhadem          ###   ########.fr       */
+/*   Created: 2019/11/08 15:50:00 by ikhadem           #+#    #+#             */
+/*   Updated: 2019/11/08 15:52:11 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_newstr(size_t n)
 {
-	unsigned char	*res;
+	char	*str;
 
-	if (count == 0 || size == 0)
-	{
-		count = 1;
-		size = 1;
-	}
-	if (!(res = (unsigned char *)malloc(size * count)))
+	if (!(str = (char *)malloc(n)))
 		return (NULL);
-	ft_bzero(res, count * size);
-	return ((void *)res);
+	return (str);
 }
