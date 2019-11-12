@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikhadem <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 08:24:51 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/10/17 08:36:18 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/12 02:26:51 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_atoi(const char *str)
 {
 	int				sign;
-	unsigned int	res;
+	long			res;
 
 	sign = 1;
 	res = 0;
@@ -30,5 +30,9 @@ int		ft_atoi(const char *str)
 		res = res * 10 + (unsigned int)(*str - '0');
 		str++;
 	}
+	if (res > 2147483647)
+		return (0);
+	if (res > 2147483648)
+		return (-1);
 	return (res * sign);
 }
