@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 08:24:51 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/12 18:52:38 by ikhadem          ###   ########.fr       */
+/*   Created: 2019/11/12 19:11:25 by ikhadem           #+#    #+#             */
+/*   Updated: 2019/11/12 20:35:04 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+size_t		ft_wstrlen(char *str)
 {
-	int				sign;
-	long			res;
+	size_t		len;
 
-	sign = 1;
-	res = 0;
-	while (ft_isspace(*str) && *str)
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (ft_isdigit(*str) && *str)
+	len = 0;
+	while (*str != L'\0')
 	{
-		res = res * 10 + (unsigned int)(*str - '0');
+		len += ft_wcharlen(*str);
 		str++;
 	}
-	return (res * sign);
+	return (len);
 }

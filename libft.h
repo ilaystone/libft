@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:01:36 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/08 15:52:00 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/13 10:00:47 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 # define SL_SIZE(A, B) (A < B ? A : B)
 # define ABS(A) (A < 0 ? -A : A)
@@ -79,6 +80,10 @@ char				*ft_itoa_base(int c, int base);
 char				*ft_upperstr(char *str);
 char				*ft_lowerstr(char *str);
 char				*ft_newstr(size_t n);
+int					ft_pow(int b, int p);
+size_t				ft_wcharlen(unsigned c);
+size_t				ft_wstrlen(char *str);
+void				ft_swap(char *a, char *b);
 
 /*
 **		BONUS

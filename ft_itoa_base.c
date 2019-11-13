@@ -6,13 +6,13 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 09:53:52 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/06 15:58:26 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/13 16:39:48 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa_base(int c,int base)
+char		*ft_itoa_base(int c, int base)
 {
 	char	*res;
 	char	*tab_base;

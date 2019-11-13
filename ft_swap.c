@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 08:24:51 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/12 18:52:38 by ikhadem          ###   ########.fr       */
+/*   Created: 2019/11/13 09:56:53 by ikhadem           #+#    #+#             */
+/*   Updated: 2019/11/13 10:01:07 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_swap(char *a, char *b)
 {
-	int				sign;
-	long			res;
+	char	c;
 
-	sign = 1;
-	res = 0;
-	while (ft_isspace(*str) && *str)
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (ft_isdigit(*str) && *str)
-	{
-		res = res * 10 + (unsigned int)(*str - '0');
-		str++;
-	}
-	return (res * sign);
+	c = *a;
+	*a = *b;
+	*b = c;
 }

@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 08:24:51 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/12 18:52:38 by ikhadem          ###   ########.fr       */
+/*   Created: 2019/11/12 14:37:11 by ikhadem           #+#    #+#             */
+/*   Updated: 2019/11/13 16:39:54 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_pow(int b, int p)
 {
-	int				sign;
-	long			res;
+	int		res;
 
-	sign = 1;
-	res = 0;
-	while (ft_isspace(*str) && *str)
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (ft_isdigit(*str) && *str)
-	{
-		res = res * 10 + (unsigned int)(*str - '0');
-		str++;
-	}
-	return (res * sign);
+	res = 1;
+	while (p--)
+		res *= b;
+	return (res);
 }
