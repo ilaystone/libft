@@ -1,5 +1,5 @@
 # libft
-is the very first project as part of 1337-khouribga where need to code a bunch of clib function
+is the very first project as part of 1337-khouribga where need to code a bunch of clib functions
 
 ## Content
 all of the subject's functions
