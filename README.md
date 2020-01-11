@@ -9,7 +9,7 @@ all of the subject's functions
 * [GCC](https://gcc.gnu.org/)
 
 ## ressoureces used to realise this project
-* GNU man is your best freind in this project
+* GNU's man is your best fiend in this project
 
 <p align="center">
     <img src="https://i.imgur.com/jm1e5Hk.jpg" height="130">
